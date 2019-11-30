@@ -11,6 +11,7 @@ import android.location.LocationManager;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
@@ -74,6 +75,19 @@ public class Selection extends AppCompatActivity implements LocationListener {
         deliveryLocation=findViewById(R.id.deliveryLocation);
 
         delivererListButton=findViewById(R.id.deliverersList);
+
+
+        //restricting time for te duration one can stay in the screen
+
+        Handler mHandler=new Handler();
+        mHandler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                Intent i=new Intent(Selection.this,IntermediateAsk.class);
+                startActivity(i);
+                Toast.makeText(Selection.this, "Too much time taken", Toast.LENGTH_SHORT).show();
+            }
+        },6000L);
 
         delivererListButton.setOnClickListener(new View.OnClickListener() {
             @Override

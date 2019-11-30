@@ -10,6 +10,7 @@ import android.location.LocationListener;
 import android.location.LocationManager;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Handler;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
@@ -61,6 +62,20 @@ public class DelivererStatus extends AppCompatActivity implements LocationListen
         editTextTimeAvailable = findViewById(R.id.editTextTimeAvailable);
         delivererLatLang = findViewById(R.id.deliveryLatLng);
         textViewCurrentTime=findViewById(R.id.textViewCurrentTime);
+
+
+
+        //returning to previous screen after a set period of time
+
+        Handler mHandler=new Handler();
+        mHandler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                Intent i=new Intent(DelivererStatus.this,IntermediateAsk.class);
+                startActivity(i);
+                Toast.makeText(DelivererStatus.this, "Too much time taken", Toast.LENGTH_SHORT).show();
+            }
+        },60000L);
 
 
 
