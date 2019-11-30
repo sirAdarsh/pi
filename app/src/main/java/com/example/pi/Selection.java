@@ -2,6 +2,7 @@ package com.example.pi;
 
 import android.Manifest;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Location;
@@ -20,6 +21,7 @@ import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.database.DatabaseReference;
@@ -77,18 +79,33 @@ public class Selection extends AppCompatActivity implements LocationListener {
             @Override
             public void onClick(View view) {
                 Intent i=new Intent(Selection.this,LocationListDisplay.class);
-                startActivity(i);
             }
         });
-
 
 
         orderItem=findViewById(R.id.item);
 
         buttonSubmitOrder.setOnClickListener(new View.OnClickListener() {
+
+
+
             @Override
             public void onClick(View view) {
-                addOrder();
+
+                new AlertDialog.Builder(Selection.this).setTitle("Confirmation").setMessage("Are you sure to place your order? ").setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        addOrder();
+                    }
+                })
+                        .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                                Toast.makeText(Selection.this,"Submission Cancelled ",Toast.LENGTH_SHORT).show();
+                            }
+                        })
+                        .create().show();
+
             }
         });
 
