@@ -7,13 +7,30 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="NAME :"
+                android:paddingTop="4dp"
+                android:layout_marginTop="8dp"
+                android:paddingLeft="8dp"
+                android:textStyle="bold"
+                android:textColor="#000000">
+
+            </TextView>
         <TextView
             android:id="@+id/textViewOrdererName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="TextView"
             android:paddingLeft="16dp"
+            android:paddingTop="4dp"
             android:layout_marginTop="8dp"/>
+        </LinearLayout>
 
         <!--    <TextView-->
         <!--    android:id="@+id/textViewLatLng"-->
@@ -21,18 +38,54 @@
         <!--    android:layout_height="wrap_content"-->
         <!--    android:text="TextView"-->
         <!--        android:paddingLeft="16dp"/>-->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ORDER ITEM:"
+                android:paddingTop="4dp"
+
+                android:paddingLeft="8dp"
+                android:textStyle="bold">
+
+            </TextView>
         <TextView
             android:id="@+id/textViewOrderItem"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="TextView"
+            android:paddingTop="4dp"
             android:paddingLeft="16dp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingBottom="8dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="DEL_Location:"
+                android:paddingTop="4dp"
+
+                android:paddingLeft="8dp"
+                android:textStyle="bold">
+
+            </TextView>
         <TextView
             android:id="@+id/textViewdeliveryLoc"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="TextView"
-            android:paddingLeft="16dp"/>
+            android:paddingTop="4dp"
+            android:paddingLeft="16dp"
+            />
+        </LinearLayout>
 <!--        <TextView-->
 <!--            android:id="@+id/textViewClickToViewLoc"-->
 <!--            android:layout_width="match_parent"-->

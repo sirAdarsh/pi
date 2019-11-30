@@ -79,6 +79,7 @@ public class Selection extends AppCompatActivity implements LocationListener {
             @Override
             public void onClick(View view) {
                 Intent i=new Intent(Selection.this,LocationListDisplay.class);
+                startActivity(i);
             }
         });
 
