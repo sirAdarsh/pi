@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.pi">
+
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission. ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"></uses-permission>
-
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -14,11 +14,13 @@
         android:roundIcon="@mipmap/icon"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Selection"></activity>
-        <activity android:name=".IntermediateAsk"></activity>
-        <activity android:name=".DelivererStatus"></activity>
-        <activity android:name=".OrdersListDisplay"></activity>
-        <activity android:name=".LocationListDisplay"></activity>
+        <activity android:name=".SignUpActivity"></activity>
+        <activity android:name=".ProfileActivity" />
+        <activity android:name=".Selection" />
+        <activity android:name=".IntermediateAsk" />
+        <activity android:name=".DelivererStatus" />
+        <activity android:name=".OrdersListDisplay" />
+        <activity android:name=".LocationListDisplay" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

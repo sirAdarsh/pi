@@ -8,6 +8,8 @@ import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -17,10 +19,25 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 public class IntermediateAsk extends AppCompatActivity {
+
+    FirebaseAuth mAuth;
+
+    TextView userInProfileName;
 
     private int NETWORK_PERMISSION_CODE=1; //for checking if the permission is granted
 
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+        mAuth=FirebaseAuth.getInstance();
+
+        userInProfileName.setText(mAuth.getCurrentUser().getDisplayName());
+    }
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -30,6 +47,8 @@ public class IntermediateAsk extends AppCompatActivity {
         //for checking if network permission was granted
         Button btnOrderer=findViewById(R.id.buttonOrderer);
         Button btnDeliverer=findViewById(R.id.buttonDeliverer);
+
+        userInProfileName=findViewById(R.id.userInProfileName);
 
         btnOrderer.setOnClickListener(new View.OnClickListener() {
             @Override
